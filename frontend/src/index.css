@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-dark text-white min-h-screen overflow-x-hidden;
+    /* Cinematic Netflix/Prime Style Background */
+    background: radial-gradient(circle at 15% 50%, rgba(229, 9, 20, 0.08), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(0, 69, 124, 0.08), transparent 25%),
+                #111111;
+    background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-black bg-opacity-40 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)];
+  }
+  .hero-background {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: hero-pan 25s ease-in-out infinite alternate, hero-fade 1.4s ease forwards;
+    transform-origin: center;
+    will-change: transform, opacity, background-position;
+  }
+  .hero-background::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.28) 35%, transparent 100%);
+    pointer-events: none;
+  }
+  .animate-hero-glow {
+    animation: glow-pulse 8s ease-in-out infinite;
+  }
+  @keyframes hero-pan {
+    0% {
+      background-position: center 35%;
+    }
+    100% {
+      background-position: center 45%;
+    }
+  }
+  @keyframes hero-fade {
+    0% {
+      opacity: 0;
+      transform: scale(1.02);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  @keyframes glow-pulse {
+    0%, 100% {
+      opacity: 0.55;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.85;
+      transform: scale(1.05);
+    }
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
