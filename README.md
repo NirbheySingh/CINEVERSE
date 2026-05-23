@@ -47,4 +47,4 @@ docker-compose up --build
 *The app will be available at `http://localhost:3000`.*
 
 ---
-Developed for scalability and performance using modern web standards.
+Developed for scalabili ty and performance using modern web standards.
