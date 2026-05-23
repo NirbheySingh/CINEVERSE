@@ -13,6 +13,7 @@ import TicketSuccess from './pages/TicketSuccess';
 import AdminDashboard from './pages/AdminDashboard';
 import TicketScanner from './components/admin/TicketScanner';
 import TheatreDashboard from './pages/TheatreDashboard';
+
 import ProtectedRoute from './components/common/ProtectedRoute';
 
 function App() {
